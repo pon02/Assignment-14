@@ -21,18 +21,17 @@ AWSアカウント、IAMアカウントの作成
 VPCは先ほど作成したpon_tutorial-vcpを使用  
 <img width="400" alt="スクリーンショット 2024-04-23 22 08 01" src="https://github.com/pon02/Assignment-14/assets/140311845/866583ae-dc27-4332-97f8-3da2a160c28a">
 
-4. sshフォルダにキーペアを移動
-<img width="400" alt="sshフォルダ" src="https://github.com/pon02/Assignment-14/assets/140311845/8ff49fbe-dd0f-4909-bef8-dde6082e5626">
+4. .sshフォルダにキーペアを移動
 
-※最初CUIにてダンロードフォルダからキーペアの移動を行ったが、.sshフォルダを見ても移動してきておらず、最終的にドラッグ＆ドロップで移動した。
+最初CUIにてダウンロードフォルダからキーペアの移動を行ったが、.sshフォルダを見ても移動してきておらず、最終的にドラッグ＆ドロップで移動した。
 
-5. EC2に接続
+6. EC2に接続
 <img width="400" alt="初回EC2接続" src="https://github.com/pon02/Assignment-14/assets/140311845/e16f104a-9000-4f43-aafe-35a63baf1b87">
 
-6. EC2へGit・Javaのインストール、リポジトリのクローンを行い、Spring Bootを起動
+7. EC2へGit・Javaのインストール、リポジトリのクローンを行い、Spring Bootを起動
 <img width="400" alt="Spring Boot起動" src="https://github.com/pon02/Assignment-14/assets/140311845/3999ada6-c869-4136-8179-e33703ebccfd">
 
-7. curlにてリクエストを送信しレスポンスが得られることを確認
+8. curlにてリクエストを送信しレスポンスが得られることを確認
 
 レスポンスコード：200  
 レスポンス    ：/hello →  {"message":"hello_world"}  
@@ -74,9 +73,9 @@ EC2のSecurity Groupは①のチュートリアルと同じもので作成した
 
 
 
-*　VPCはEC2と同じものを使用  
-*　VPCのprivateサブネット２つでサブネットグループを作成、RDSをEC2と同じAZのprivateサブネットに設置  
-*　RDSがEC2とのみ通信を行うための新しいSecurity Groupを作成  
+* VPCはEC2と同じものを使用  
+* VPCのprivateサブネット２つでサブネットグループを作成、RDSをEC2と同じAZのprivateサブネットに設置  
+* RDSがEC2とのみ通信を行うための新しいSecurity Groupを作成  
 <img width="400" alt="RDS詳細" src="https://github.com/pon02/Assignment-14/assets/140311845/f5e65025-6ea3-4f19-ba32-59272dd6f760">
 
 RDS用のSecurity GroupのソースにEC2で使用したSecurity GroupのIDを使用  
@@ -84,13 +83,13 @@ RDS用のSecurity GroupのソースにEC2で使用したSecurity GroupのIDを�
 5. EC2を起動  
 <img width="400" alt="EC2接続2" src="https://github.com/pon02/Assignment-14/assets/140311845/f76ccc53-e04c-4fd7-ab5c-e20df097ac0b">  
 
-6. mysqlをダウンロード
+6. MySQLをインストール
 
-mysqlがうまくインストールできなかったので、調べるとAmazon Linux 2023に対応したGPGキーがないためだったので、以下のコマンドでダウンロード
+MySQLがうまくインストールできなかったので、調べるとAmazon Linux 2023に対応したGPGキーがないためだったので、以下のコマンドでダウンロード
 
 ```sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023```  
 
-無事mysqlをインストールできた。  
+無事MySQLをインストールできた。  
 
 <img width="400" alt="mysqlダウンロード" src="https://github.com/pon02/Assignment-14/assets/140311845/337570df-12e2-4e9f-ae14-4ca985357ee1">
 
@@ -102,7 +101,7 @@ mysqlコマンドでデータベースにアクセス成功
 
 8. curlコマンドでRDS接続確認
 
-EC2接続中のターミナルからcurlコマンドで接続確認が下記コマンドでできるという記事を見たので実施。  
+EC2接続中のターミナルから下記のcurlコマンドで接続確認ができるという記事を見たので実施。  
 
 ```curl -v telnet://[RDSインスタンスのエンドポイント]:[ポート番号]```  
 
@@ -123,6 +122,6 @@ Amazon Linux2023に標準装備されているcurlのバージョンがminimal�
 何度かやり直すうち、少しずつAWSの単語や設定が理解できてきたとともに、EC2のターミナル操作を調べるための記事についても理解ができるようになっていたので時間がかかったが少しは手応えを感じることができた。  
 AWSの設定については作業中に把握しきるのは到底無理であったので、AWSコースの受講等勉強を進めていく必要性を感じた。  
 今回の内容で、特に追求できずに終わったことは  
-・　キーペアの移動ができなかった理由  
-・　ルートテーブルの理解  
+・ キーペアの移動ができなかった理由  
+・ ルートテーブルの理解  
 の2点で、今後のタスクとする。
