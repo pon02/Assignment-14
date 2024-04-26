@@ -44,7 +44,7 @@ VPCは先ほど作成したpon_tutorial-vcpを使用
 1. RDSを作成
 <img width="400" alt="RDS00" src="https://github.com/pon02/Assignment-14/assets/140311845/7e944975-8e97-4721-ac68-ef224cd5306b">
 
-※Security Groupが自分が設定したものと違うものが入っていて、見てみるとMysql用の作成した記憶のないSecurity Groupができていたり、調べているうちにVPCにも作成していないサブネットができていることに気づき、
+※Security Groupが自分が設定したものと違うものが入っていて、見てみるとMySQL用の作成した記憶のないSecurity Groupができていたり、調べているうちにVPCにも作成していないサブネットができていることに気づき、
 
 <img width="400" alt="VPCリソースマップ 2" src="https://github.com/pon02/Assignment-14/assets/140311845/227bbd97-72bd-4e94-a45b-a12d8ef3d873">
 
